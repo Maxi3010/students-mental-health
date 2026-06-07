@@ -1,25 +1,25 @@
-# 🧠 Students' Mental Health – SQL Analysis
+# Students' Mental Health SQL Analysis
 
-This project analyzes how the **length of stay** impacts the **mental health scores** (PHQ-9, SCS, ASISS) of international students.
+A small SQL analysis project exploring how length of stay relates to mental-health scores for international students. The repository contains one query that groups international students by stay duration and calculates average PHQ-9, SCS, and ASISS scores.
 
-## 📌 What the project is
-A SQL-based analysis that groups international students by length of stay and calculates:
-- Count of international students  
-- Average PHQ-9 score (todep)  
-- Average SCS score (tosc)  
-- Average ASISS score (toas)
+## Project Status
 
-## 🛠 Tech Stack
-- SQL  
-- SQLite / MySQL / PostgreSQL (depending on your environment)
+This is a compact SQL learning project. It is useful for showing aggregation, filtering, and query readability, but it is not a full application.
 
-## ✨ Features
-- Filtering international students only  
-- Aggregation by stay levels  
-- Rounded diagnostic score averages  
-- Results sorted descending by stay duration  
+## Tech Stack
 
-## 🔍 The SQL Query
+- SQL
+- SQLite, MySQL, or PostgreSQL-compatible concepts
+
+## Features
+
+- Filters international students only
+- Groups records by length of stay
+- Counts students in each stay group
+- Calculates rounded average diagnostic scores
+- Sorts results by stay duration in descending order
+
+## SQL Query
 
 ```sql
 SELECT
@@ -32,3 +32,27 @@ FROM students
 WHERE inter_dom = 'Inter'
 GROUP BY stay
 ORDER BY stay DESC;
+```
+
+## Project Structure
+
+```text
+.
+|-- query.sql
+`-- README.md
+```
+
+## How to Use
+
+Run `query.sql` against a database that contains a `students` table with the expected columns: `stay`, `inter_dom`, `todep`, `tosc`, and `toas`.
+
+## Learning Focus
+
+- Filtering rows with `WHERE`
+- Aggregating grouped records with `COUNT` and `AVG`
+- Rounding numeric outputs
+- Writing readable SQL aliases
+
+## License
+
+No license file has been added yet.
